@@ -6,16 +6,18 @@ This repository is a route scheduling solver for [EuroTrip](https://www.indierun
 
 # Formulation
 
-Objective:
+**Objective**:
  Minimize the total time spent on the road, i.e., 
 
  $$\min \sum_{j=1}^{N} t_j$$
 
 where:
-<img src="img/equation.png" alt="Objective Explanation" width="400">
 
+<div align="center">
+  <img src="img/equation.png" alt="Objective Explanation" width="600">
+</div>
 
-Constraints:
+**Constraints**:
 1. Necessary Conditions 
     - At least one person has to run at all time, followed by a biker wherever possible.
     - At least one person has to drive at all time (not overlapping with runner/biker).
@@ -29,4 +31,3 @@ Constraints:
     - Total driving limits per runner.
     - Night driving limits per runner.
     - Bound number of driver changes.
-
