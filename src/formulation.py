@@ -50,7 +50,8 @@ def optimal_schedule(route, skills, time_limit=60, toll=1e-6, save=True, max_dri
             tdn = total_distance_night[j]
             tdp = total_D_plus[j]
             tdm = total_D_minus[j]
-            base_pace = (pace_HM * (1+ endurance * (td - 21)))
+            adj_td = td + tdp/100
+            base_pace = (pace_HM * (1+ endurance * (adj_td - 21)))
             m.addQConstr(
                 time_per_runner[j] == 
                     base_pace * td +
@@ -227,7 +228,7 @@ def extract_results(route, skills, x, d, r, z, min_start_rest, max_start_rest, s
         assignment_df.to_csv('results/schedule.csv')
 
     summary = {
-        "Runner": [], "Legs": [], "Distance": [], "D+": [], "D-": [], "Driving": [], "Driving shifts": [], "Base pace": []
+        "Runner": [], "Legs": [], "Distance": [], "D+": [], "D-": [], "Adj. Distance":[], "Driving": [], "Driving shifts": [], "Base pace": []
     }
     for j in people:
         assigned_legs = [i for i in segments if x[i, j].X > 0.5]
@@ -237,9 +238,10 @@ def extract_results(route, skills, x, d, r, z, min_start_rest, max_start_rest, s
         summary["Distance"].append(sum(route.loc[i, "Distance"] / (1 + route.loc[i, "Bike"]) for i in assigned_legs))
         summary["D+"].append(int(sum(route.loc[i, "D+"] / (1 + route.loc[i, "Bike"]) for i in assigned_legs)))
         summary["D-"].append(int(sum(route.loc[i, "D-"] / (1 + route.loc[i, "Bike"]) for i in assigned_legs)))
+        summary["Adj. Distance"].append(summary["Distance"][-1] + summary["D+"][-1] / 100)
         summary["Driving"].append(sum(route.loc[i, "Distance"] for i in assigned_driving))
         summary["Driving shifts"].append(int(sum(z[i, j].X for i in range(1, n_segments) if z[i, j].X > 0.5)))
-        summary["Base pace"].append(pace_to_str(skills.loc[j, "pace_HM"] * (1+skills.loc[j, "endurance"] * (summary["Distance"][-1] - 21))))
+        summary["Base pace"].append(pace_to_str(skills.loc[j, "pace_HM"] * (1+skills.loc[j, "endurance"] * (summary["Adj. Distance"][-1] - 21))))
 
 
     summary_df = pd.DataFrame(summary)

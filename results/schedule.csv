@@ -2,38 +2,38 @@ Segment,Place,From,To,Distance,D+,D-,Runner A,Runner B,Driver,Sleep,D+/km,D-/km
 1,Innsbruck -> Vill,0.0,7.7,7.7,260,10,Florian,,Alex,[],33.77,1.3
 2,Vill -> Ruggenschrein,7.7,12.4,4.7,230,0,Benjamin,,Alex,[],48.94,0.0
 3,Ruggenschrein -> Gedeir,12.4,20.0,7.6,160,140,Riccardo,Anton,Alex,[],10.53,9.21
-4,Gedeir -> Steinach am Brenner,20.0,29.0,9.0,90,160,Florian,Monika,Alex,[],5.0,8.89
+4,Gedeir -> Steinach am Brenner,20.0,29.0,9.0,90,160,Florian,Paul,Alex,[],5.0,8.89
 5,Steinach am Brenner -> Stafflach,29.0,33.0,4.0,100,40,Benjamin,,Alex,[],25.0,10.0
-7,Brenner-> Gossensaß,42.0,51.0,9.0,0,330,Alex,Riccardo,Florian,[],0.0,18.33
-8,Gossensaß -> Via Isarco,51.0,62.0,11.0,0,190,Monika,Paul,Florian,[],0.0,8.64
+7,Brenner-> Gossensaß,42.0,51.0,9.0,0,330,Riccardo,Anton,Alex,[],0.0,18.33
+8,Gossensaß -> Via Isarco,51.0,62.0,11.0,0,190,Monika,Paul,Alex,[],0.0,8.64
 9,Via Isarco -> Sachsenklemme,62.0,71.0,9.0,140,190,Florian,Benjamin,Alex,[],7.78,10.56
 10,Sachsenklemme -> Aicha,71.0,82.0,11.0,70,200,Esther,Riccardo,Alex,[],3.18,9.09
-11,Aicha -> Vintl Bahnhof,82.0,93.0,11.0,170,130,Paul,Anton,Alex,[],7.73,5.91
-12,Vintl Bahnhof -> Casteldarne - Ehrenburg,93.0,104.0,11.0,180,130,Florian,Benjamin,Alex,[],8.18,5.91
-13,Casteldarne - Ehrenburg -> Brunico Bruneck,104.0,114.0,10.0,150,100,Esther,Riccardo,Alex,[],7.5,5.0
-14,Brunico Bruneck -> Mitterolang,114.0,123.0,9.0,230,0,Monika,Anton,Alex,[],12.78,0.0
-15,Mitterolang -> Niederdorf,123.0,136.0,13.0,180,80,Florian,Benjamin,Alex,[],6.92,3.08
-16,Niederdorf -> San Candido Innichen,136.0,147.0,11.0,80,50,Esther,Riccardo,Alex,[],3.64,2.27
-17,San Candido Innichen -> Sillan,147.0,159.0,12.0,10,110,Paul,Alex,Benjamin,[],0.42,4.58
-18,Sillan -> Magarethenbrücke,159.0,169.0,10.0,20,170,Florian,Monika,Benjamin,[],1.0,8.5
-19,Magarethenbrücke -> near Lienz ,169.0,182.0,13.0,50,210,Riccardo,Anton,Benjamin,[],1.92,8.08
-20,near Lienz  -> after Lienz ,182.0,192.0,10.0,20,130,Esther,Paul,Benjamin,[],1.0,6.5
-21,after Lienz  -> Nörsach ,192.0,203.0,11.0,10,40,Monika,Alex,Benjamin,[],0.45,1.82
-22,Nörsach  -> Oberdrauberg ,203.0,209.0,6.0,70,60,Florian,,Benjamin,[],11.67,10.0
-23,Oberdrauberg  -> Kötschach ,209.0,220.0,11.0,350,20,Paul,Anton,Benjamin,[],15.91,0.91
-24,Kötschach  -> below Grafendorf,220.0,232.0,12.0,0,70,Alex,Riccardo,Benjamin,['Paul'],0.0,2.92
-25,below Grafendorf -> below Waidegg ,232.0,244.0,12.0,0,35,Florian,Monika,Benjamin,['Paul'],0.0,1.46
-26,below Waidegg -> Eggeralm Straße Bridge ,244.0,253.0,9.0,10,40,Esther,Anton,Benjamin,"['Monika', 'Paul']",0.56,2.22
-27,Eggeralm Straße Bridge  -> Vorderberg,253.0,267.0,14.0,20,30,Paul,Alex,Benjamin,['Monika'],0.71,1.07
-28,Vorderberg  -> Maglern,267.0,281.0,14.0,180,100,Florian,Riccardo,Benjamin,['Monika'],6.43,3.57
-29,Maglern -> Tarvisio Train station,281.0,290.0,9.0,210,110,Esther,Anton,Benjamin,['Monika'],11.67,6.11
-30,Tarvisio Train station -> Podkoren,290.0,302.0,12.0,100,0,Alex,Benjamin,Florian,"['Monika', 'Anton']",4.17,0.0
-31,Podkoren -> after Gozd Martuljek,302.0,312.0,10.0,0,85,Paul,Riccardo,Florian,"['Monika', 'Alex', 'Anton']",0.0,4.25
-32,after Gozd Martuljek -> Mojstrana ,312.0,320.0,8.0,0,80,Esther,Monika,Florian,"['Alex', 'Anton']",0.0,5.0
-33,Mojstrana → Jesenice,320.0,329.0,9.0,70,140,Anton,Benjamin,Florian,"['Esther', 'Alex']",3.89,7.78
-34,Jesenice → towards Hrase,329.0,339.0,10.0,50,70,Alex,Riccardo,Florian,['Esther'],2.5,3.5
-35,towards Hrase → Dobro Polje,339.0,349.0,10.0,10,80,Monika,Paul,Florian,['Esther'],0.5,4.0
-36,Dobro Polje → Zeje,349.0,359.0,10.0,130,170,Florian,Benjamin,Alex,['Esther'],6.5,8.5
-37,crossing Kranj,359.0,371.0,12.0,40,90,Esther,Anton,Alex,[],1.67,3.75
-38,Prebacevo → before Medno,371.0,382.0,11.0,60,90,Paul,Riccardo,Alex,[],2.73,4.09
+11,Aicha -> Vintl Bahnhof,82.0,93.0,11.0,170,130,Paul,Alex,Florian,[],7.73,5.91
+12,Vintl Bahnhof -> Casteldarne - Ehrenburg,93.0,104.0,11.0,180,130,Anton,Benjamin,Florian,[],8.18,5.91
+13,Casteldarne - Ehrenburg -> Brunico Bruneck,104.0,114.0,10.0,150,100,Florian,Riccardo,Alex,[],7.5,5.0
+14,Brunico Bruneck -> Mitterolang,114.0,123.0,9.0,230,0,Esther,Paul,Alex,[],12.78,0.0
+15,Mitterolang -> Niederdorf,123.0,136.0,13.0,180,80,Anton,Benjamin,Alex,[],6.92,3.08
+16,Niederdorf -> San Candido Innichen,136.0,147.0,11.0,80,50,Florian,Riccardo,Alex,[],3.64,2.27
+17,San Candido Innichen -> Sillan,147.0,159.0,12.0,10,110,Esther,Alex,Benjamin,[],0.42,4.58
+18,Sillan -> Magarethenbrücke,159.0,169.0,10.0,20,170,Monika,Paul,Benjamin,[],1.0,8.5
+19,Magarethenbrücke -> near Lienz ,169.0,182.0,13.0,50,210,Florian,Riccardo,Benjamin,[],1.92,8.08
+20,near Lienz  -> after Lienz ,182.0,192.0,10.0,20,130,Esther,Alex,Benjamin,[],1.0,6.5
+21,after Lienz  -> Nörsach ,192.0,203.0,11.0,10,40,Monika,Paul,Benjamin,[],0.45,1.82
+22,Nörsach  -> Oberdrauberg ,203.0,209.0,6.0,70,60,Florian,,Benjamin,['Paul'],11.67,10.0
+23,Oberdrauberg  -> Kötschach ,209.0,220.0,11.0,350,20,Alex,Anton,Benjamin,['Paul'],15.91,0.91
+24,Kötschach  -> below Grafendorf,220.0,232.0,12.0,0,70,Monika,Riccardo,Benjamin,"['Paul', 'Alex']",0.0,2.92
+25,below Grafendorf -> below Waidegg ,232.0,244.0,12.0,0,35,Florian,Paul,Benjamin,['Alex'],0.0,1.46
+26,below Waidegg -> Eggeralm Straße Bridge ,244.0,253.0,9.0,10,40,Esther,Anton,Benjamin,['Alex'],0.56,2.22
+27,Eggeralm Straße Bridge  -> Vorderberg,253.0,267.0,14.0,20,30,Monika,Alex,Benjamin,['Esther'],0.71,1.07
+28,Vorderberg  -> Maglern,267.0,281.0,14.0,180,100,Florian,Riccardo,Benjamin,['Esther'],6.43,3.57
+29,Maglern -> Tarvisio Train station,281.0,290.0,9.0,210,110,Paul,Anton,Benjamin,['Esther'],11.67,6.11
+30,Tarvisio Train station -> Podkoren,290.0,302.0,12.0,100,0,Alex,Benjamin,Florian,"['Esther', 'Anton']",4.17,0.0
+31,Podkoren -> after Gozd Martuljek,302.0,312.0,10.0,0,85,Monika,Riccardo,Florian,"['Esther', 'Anton']",0.0,4.25
+32,after Gozd Martuljek -> Mojstrana ,312.0,320.0,8.0,0,80,Esther,Paul,Florian,"['Monika', 'Anton']",0.0,5.0
+33,Mojstrana → Jesenice,320.0,329.0,9.0,70,140,Anton,Benjamin,Florian,['Monika'],3.89,7.78
+34,Jesenice → towards Hrase,329.0,339.0,10.0,50,70,Alex,Riccardo,Florian,['Monika'],2.5,3.5
+35,towards Hrase → Dobro Polje,339.0,349.0,10.0,10,80,Esther,Paul,Florian,['Monika'],0.5,4.0
+36,Dobro Polje → Zeje,349.0,359.0,10.0,130,170,Florian,Benjamin,Alex,['Monika'],6.5,8.5
+37,crossing Kranj,359.0,371.0,12.0,40,90,Monika,Anton,Alex,[],1.67,3.75
+38,Prebacevo → before Medno,371.0,382.0,11.0,60,90,Esther,Riccardo,Alex,[],2.73,4.09
 39,Prebacevo → Lubjiana,382.0,392.0,10.0,50,60,Florian,Benjamin,Alex,[],2.5,3.0
