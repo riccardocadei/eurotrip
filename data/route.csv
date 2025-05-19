@@ -1,0 +1,44 @@
+EuroTrip 2025 - Rotation Schedule,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+"day/
+night",Segment,From,To,Distance,D+,D-,Elevation,Places,Bike,Runner 1,Runner 2,Driver Van,Note,night,valid
+,1,0,7.7,7.7,260,10,5.5km flat. 2.2km steep uphill,Innsbruck -> Vill,-,,-,,,0,1
+,2,7.7,12.4,4.7,230,0,,Vill -> Ruggenschrein,-,,-,,,0,1
+,3,12.4,20,7.6,160,140,,Ruggenschrein -> Gedeir,bike,,,,,0,1
+,4,20,29,9,90,160,,Gedeir -> Steinach am Brenner,bike,,,,Get bike in van after this section,0,1
+,5,29,33,4,100,40,+100/-40m,Steinach am Brenner -> Stafflach,-,,-,,No Bike so we get in van quickly for driving section!,0,1
+,6,33,42,9,,,-,Stafflach -> Brenner,-,-,-,,Section by Car / No running!!!,0,0
+,7,42,51,9,0,330,Mostly downhill :-330m,Brenner-> Gossensaß,bike,,,,,0,1
+,8,51,62,11,0,190,Mostly downhill :-190m,Gossensaß -> Via Isarco,bike,,,,,0,1
+,9,62,71,9,140,190,+140m/-190m,Via Isarco -> Sachsenklemme,bike,,,,,0,1
+,10,71,82,11,70,200,+70/-200,Sachsenklemme -> Aicha,bike,,,,,0,1
+,11,82,93,11,170,130,+170/-130 (still cycleable?),Aicha -> Vintl Bahnhof,bike,,,,Checkpoint 1,0,1
+,12,93,104,11,180,130,+180/-130 (still cycleable?),Vintl Bahnhof -> Casteldarne - Ehrenburg,bike,,,,,0,1
+,13,104,114,10,150,100,+150/-100,Casteldarne - Ehrenburg -> Brunico Bruneck,bike,,,,,0,1
+,14,114,123,9,230,0,+230,Brunico Bruneck -> Mitterolang,bike,,,,,0,1
+,15,123,136,13,180,80,+180/-80,Mitterolang -> Niederdorf,bike,,,,,0,1
+,16,136,147,11,80,50,+80/-50,Niederdorf -> San Candido Innichen,bike,,,,,0,1
+,17,147,159,12,10,110,,San Candido Innichen -> Sillan,bike,,,,,0,1
+,18,159,169,10,20,170,+20/-170,Sillan -> Magarethenbrücke,bike,,,,,0,1
+,19,169,182,13,50,210,+50/-210,Magarethenbrücke -> near Lienz ,bike,,,,,0,1
+,20,182,192,10,20,130,+20/-130,near Lienz  -> after Lienz ,bike,,,,Checkpoint 2,0,1
+,21,192,203,11,10,40,+10/-40,after Lienz  -> Nörsach ,bike,,,,,0,1
+,22,203,209,6,70,60,+70/-60,Nörsach  -> Oberdrauberg ,-,,,,One person only,0,1
+,23,209,220,11,350,20,+350/-20 (all elevation in first 6km. then downhill),Oberdrauberg  -> Kötschach ,bike,,,,Route might be dangerous,0,1
+,24,220,232,12,0,70,-70m,Kötschach  -> below Grafendorf,bike,,,,,1,1
+,25,232,244,12,0,35,-35m,below Grafendorf -> below Waidegg ,bike,,,,,1,1
+,26,244,253,9,10,40,+10/-40m,below Waidegg -> Eggeralm Straße Bridge ,bike,,,,,1,1
+,27,253,267,14,20,30,+20/-30m,Eggeralm Straße Bridge  -> Vorderberg,bike,,,,,1,1
+,28,267,281,14,180,100,+180/-100m,Vorderberg  -> Maglern,bike,,,,Passports for Italy!,1,1
+,29,281,290,9,210,110,+210/-110m,Maglern -> Tarvisio Train station,bike,,,,Checkpoint 3,1,1
+,30,290,302,12,100,0,+100,Tarvisio Train station -> Podkoren,bike,,,,Passports for Slovenia!,1,1
+,31,302,312,10,0,85,- 85m,Podkoren -> after Gozd Martuljek,bike,,,,,1,1
+,32,312,320,8,0,80,+0/-80m,after Gozd Martuljek -> Mojstrana ,bike,,,,,1,1
+,33,320,329,9,70,140,+70/-140m,Mojstrana → Jesenice,bike,,,,,1,1
+,34,329,339,10,50,70,+50/-70m,Jesenice → towards Hrase,bike,,,,,1,1
+,35,339,349,10,10,80,+10/-80m,towards Hrase → Dobro Polje,bike,,,,,0,1
+,36,349,359,10,130,170,+130/-170m,Dobro Polje → Zeje,bike,,,,,0,1
+,37,359,371,12,40,90,+40/-90m,crossing Kranj,bike,,,,,0,1
+,38,371,382,11,60,90,+60/-90m,Prebacevo → before Medno,bike,,,,,0,1
+,39,382,392,10,50,60,+50/-60m,Prebacevo → Lubjiana,bike,,,,ARRIVAL :-),0,1
+,,,,,3500,3740,,,,,,,,,0
