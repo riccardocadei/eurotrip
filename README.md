@@ -31,3 +31,9 @@ where:
     - Total driving limits per runner.
     - Night driving limits per runner.
     - Bound number of driver changes.
+
+By linearly approximating the pace exponential component in the objective, the problem can be formulated as a quadratic programming (QP) problem — that is, with a quadratic objective, linear constraints, and integer variables — and solved efficiently using a mixed-integer quadratic programming (MIQP) solver such as Gurobi.
+
+# Structure
+All the code is contained in the `src` folder. `main.ipynb` is the main notebook to run the solver. `pace.ipynb` is the auxiliary notebook for the pace modeling. The data (route and runners skills/requirements) are contained in the `data` folder. 
+
