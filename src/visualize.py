@@ -4,6 +4,8 @@ import matplotlib.gridspec as gridspec
 from matplotlib.lines import Line2D
 import numpy as np
 
+from src.utils import pace_to_str
+
 
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning, module="matplotlib")
@@ -159,15 +161,7 @@ def plot_pace_decay(pace_HM, k_values=[0.002, 0.004, 0.006], save=True):
         pace = pace_HM * np.exp(k * (dist - 21))
         plt.plot(dist, pace, label=f'k={k:.3f}')
 
-    def pace_to_str(p):
-        m = int(np.floor(p))
-        s = int(round((p - m) * 60))
-        if s == 60:
-            m += 1
-            s = 0
-        return f'{m}:{s:02d}'
-
-    yticks = np.arange(pace_HM, pace_HM*np.exp(k_values[-1]*(70-21)) + 0.5, 1/6)
+    yticks = np.arange(pace_HM, pace_HM*np.exp(k_values[-1]*(70-21)) + 0.5, 10)
     yticklabels = [pace_to_str(p) for p in yticks]
 
     plt.yticks(yticks, yticklabels)
@@ -178,6 +172,5 @@ def plot_pace_decay(pace_HM, k_values=[0.002, 0.004, 0.006], save=True):
 
     plt.grid(True)
     plt.tight_layout()
-    sec = round((pace_HM - int(pace_HM)) * 60)
-    if save: plt.savefig(f"results/pace/{int(pace_HM)}:{sec if sec>0 else '00'}.png")
+    if save: plt.savefig(f"results/pace/{int(pace_HM)//60}:{int(pace_HM)%60:02d}.png")
     plt.show()
