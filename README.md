@@ -8,13 +8,11 @@ This repository is a route scheduling solver for [EuroTrip](https://www.indierun
 
 Objective:
  Minimize the total time spent on the road, i.e., 
+
  $$\min \sum_{j=1}^{N} t_j$$
+
 where:
-$$t_j:=\underbrace{v_j\cdot d_j}_{base\ time} + \underbrace{p_{night}\cdot d^{night}_j}_{night\ penalty} + \underbrace{k^+ \cdot D^+}_{uphill\ penalty\ (GAP)} + \underbrace{k^- \cdot D^-}_{downhill\ gain\ (GAP)}$$
-$$v_j:= \underbrace{v^{HM}_j}_{HM\ pace} \cdot \underbrace{exp\{k_p\cdot(d_j^* -21km)\}}_{endurance\ adjustement}\approx v^{HM}_j \cdot [1+k_p\cdot(d_j^* -21km)]$$
-$$d_j^*:=d_j+\frac{D^+}{100}$$
-
-
+<img src="img/equation.png" alt="Objective Explanation" width="400">
 
 
 Constraints:
