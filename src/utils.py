@@ -34,3 +34,8 @@ def get_pace():
     for distance in range(20, 91, 5):
         pace_df[distance] = get_basepace(skills['pace_HM'], skills['endurance'], distance)
     return pace_df
+
+def pace_to_str(p):
+    m = p // 60
+    s = p % 60
+    return f'{int(m)}:{int(s):02d}'
