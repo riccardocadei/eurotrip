@@ -1,5 +1,5 @@
 Runner,max_drive,drive_night,min_long_rest,max_run,min_run,max_D+,pace_HM,endurance,K+,K-,p_night
-Florian,200,1,0,65,55,1000,3:30,0.002,0.3,-0.1,0
+Florian,200,1,0,60,45,1000,3:30,0.002,0.3,-0.1,0
 Esther,0,0,4,50,40,500,4:10,0.004,0.55,-0.05,2
 Monika,0,0,4,50,40,500,4:20,0.004,0.55,-0.05,2
 Paul,0,0,3,50,40,500,3:30,0.003,0.55,-0.05,2

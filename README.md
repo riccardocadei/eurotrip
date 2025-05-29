@@ -26,11 +26,12 @@ where:
 3. Recovery Constraints
     - At least 2 legs of recovery between two legs of running.
     - At least a night sleeping slot per runner with personalized length.
+    - Avoid too long recovery intervals (default: 7+ shifts). 
 4. Driving Constraints
     - At least 1 leg of recovery after running before driving.
     - Total driving limits per runner.
     - Night driving limits per runner.
-    - Bound number of driver changes.
+    - Bound number of driver changes (default: 5).
 
 By linearly approximating the pace exponential component in the objective, the problem can be formulated as a quadratic programming (QP) problem — that is, with a quadratic objective, linear constraints, and integer variables — and solved efficiently using a mixed-integer quadratic programming (MIQP) solver such as Gurobi.
 

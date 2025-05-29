@@ -1,15 +1,22 @@
 import gurobipy as gp
 from gurobipy import GRB
 import pandas as pd
-from src.utils import pace_to_str
+from src.utils import pace_to_str, str_to_pace, format_seconds
 
-def optimal_schedule(route, skills, time_limit=60, toll=1e-6, save=True, max_drive_change=5, quadratic=False):
+def optimal_schedule(route, skills, 
+                     time_limit=60, 
+                     toll=1e-6, 
+                     save=True, 
+                     max_drive_change=5, 
+                     min_start_rest=20,
+                     max_start_rest=33,
+                     max_long_rest=7,
+                     quadratic=False):
+    
     segments = list(route.index)
     people = list(skills.index)
     n_segments = len(segments)
     n_people = len(people)
-    min_start_rest = 20
-    max_start_rest = 33
 
     m = gp.Model("RelayRunnerAssignment")
     m.setParam('MIPGap', toll)
@@ -106,6 +113,11 @@ def optimal_schedule(route, skills, time_limit=60, toll=1e-6, save=True, max_dri
                 if i < n_segments:
                     m.addConstr(d[i, j] + x[i, j] <= 1 - r[s, j])
         m.addConstr(gp.quicksum(r[s, j] for s in range(min_start_rest, max_start_rest)) >= 1)
+    
+    # Recovery3: Avoid very long rest (always run or drive each max_long_rest segments)
+    for j in people:
+        for i in range(n_segments - 6):
+            m.addConstr(gp.quicksum(x[i + k, j]+d[i + k, j] for k in range(max_long_rest)) >= 1)
 
     # Drive1: Rest before driving
     for i in range(n_segments - 1):
@@ -158,9 +170,34 @@ def extract_results(route, skills, x, d, r, z, min_start_rest, max_start_rest, s
     n_segments = len(segments)
     n_people = len(people)
 
+    summary = {
+        "Runner": [], "Legs": [], "Distance": [], "D+": [], "D-": [], "Adj. Distance":[], "Driving": [], "Driving shifts": [], "Base pace": []
+    }
+    for j in people:
+        assigned_legs = [i for i in segments if x[i, j].X > 0.5]
+        assigned_driving = [i for i in segments if d[i, j].X > 0.5]
+        summary["Runner"].append(skills.loc[j, "Runner"])
+        summary["Legs"].append(len(assigned_legs))
+        summary["Distance"].append(sum(route.loc[i, "Distance"] / (1 + route.loc[i, "Bike"]) for i in assigned_legs))
+        summary["D+"].append(int(sum(route.loc[i, "D+"] / (1 + route.loc[i, "Bike"]) for i in assigned_legs)))
+        summary["D-"].append(int(sum(route.loc[i, "D-"] / (1 + route.loc[i, "Bike"]) for i in assigned_legs)))
+        summary["Adj. Distance"].append(summary["Distance"][-1] + summary["D+"][-1] / 100)
+        summary["Driving"].append(sum(route.loc[i, "Distance"] for i in assigned_driving))
+        summary["Driving shifts"].append(int(sum(z[i, j].X for i in range(1, n_segments) if z[i, j].X > 0.5)))
+        summary["Base pace"].append(pace_to_str(skills.loc[j, "pace_HM"] * (1+skills.loc[j, "endurance"] * (summary["Adj. Distance"][-1] - 21))))
+
+
+    summary_df = pd.DataFrame(summary)
+    summary_df.set_index('Runner', inplace=True)
+
+    if save:
+        summary_df.to_csv('results/summary.csv')
+
+    ###############
+
     assignment = {
         "Segment": [], "Place": [], "From": [], "To": [], "Distance": [], "D+": [], "D-": [],
-        "Runner A": [], "Runner B": [], "Driver": [], "Sleep": []
+        "Runner A": [], "Speed A": [], "Runner B": [], "Speed B": [], "Driver": [], "Sleep": [], "D+/km": [], "D-/km": [], "Time": []
     }
 
     rest_start = {}
@@ -171,7 +208,8 @@ def extract_results(route, skills, x, d, r, z, min_start_rest, max_start_rest, s
             if (s, j) in r and r[s, j].X > 0.5:
                 rest_start[j] = s
                 break
-
+    
+    t = 6*60*60 # 6 AM start time
     for i in segments:
         assigned_runners = [skills.loc[j, "Runner"] for j in people if x[i, j].X > 0.5]
         assigned_driver = [skills.loc[j, "Runner"] for j in people if d[i, j].X > 0.5][0]
@@ -181,8 +219,18 @@ def extract_results(route, skills, x, d, r, z, min_start_rest, max_start_rest, s
         assignment["Distance"].append(route.loc[i, "Distance"])
         assignment["D+"].append(route.loc[i, "D+"])
         assignment["D-"].append(route.loc[i, "D-"])
+        assignment["D+/km"].append(int(round(route.loc[i, "D+"] / route.loc[i, "Distance"], 0)))
+        assignment["D-/km"].append(int(round(route.loc[i, "D-"] / route.loc[i, "Distance"], 0)))
         assignment["Runner A"].append(assigned_runners[0])
-        assignment["Runner B"].append(assigned_runners[1] if len(assigned_runners) > 1 else "")
+        j = skills[skills["Runner"] == assigned_runners[0]].index[0]
+        assignment["Speed A"].append(pace_to_str(str_to_pace(summary_df.loc[assigned_runners[0], "Base pace"])+skills.loc[j, "K+"]*assignment["D+/km"][-1]+skills.loc[j, "K-"]*assignment["D-/km"][-1]+skills.loc[j, "p_night"]))
+        if len(assigned_runners) > 1:
+            assignment["Runner B"].append(assigned_runners[1])
+            j = skills[skills["Runner"] == assigned_runners[1]].index[0]
+            assignment["Speed B"].append(pace_to_str(str_to_pace(summary_df.loc[assigned_runners[1], "Base pace"])+skills.loc[j, "K+"]*assignment["D+/km"][-1]+skills.loc[j, "K-"]*assignment["D-/km"][-1]+skills.loc[j, "p_night"]))
+        else:
+            assignment["Runner B"].append("")
+            assignment["Speed B"].append("")
         assignment["Driver"].append(assigned_driver)
         assignment["Place"].append(route.loc[i, "Places"])
         sleep = []
@@ -193,8 +241,13 @@ def extract_results(route, skills, x, d, r, z, min_start_rest, max_start_rest, s
                 sleep.append(skills.loc[j, "Runner"])
         assignment["Sleep"].append(sleep)
 
-    assignment["D+/km"] = [round(assignment["D+"][i] / assignment["Distance"][i] / (1 + route.loc[i, "Bike"]), 2) for i in range(len(assignment["D+"]))]
-    assignment["D-/km"] = [round(assignment["D-"][i] / assignment["Distance"][i] / (1 + route.loc[i, "Bike"]), 2) for i in range(len(assignment["D-"]))]
+        distance = route.loc[i, "Distance"]
+        if route.loc[i, "Bike"] == 1:
+            speed = (str_to_pace(assignment["Speed A"][-1])+str_to_pace(assignment["Speed B"][-1]))/2
+        else:
+            speed = str_to_pace(assignment["Speed A"][-1])
+        t += distance * speed 
+        assignment["Time"].append(format_seconds(t))
 
     assignment_df = pd.DataFrame(assignment)
 
@@ -226,29 +279,6 @@ def extract_results(route, skills, x, d, r, z, min_start_rest, max_start_rest, s
     assignment_df.set_index('Segment', inplace=True)
     if save:
         assignment_df.to_csv('results/schedule.csv')
-
-    summary = {
-        "Runner": [], "Legs": [], "Distance": [], "D+": [], "D-": [], "Adj. Distance":[], "Driving": [], "Driving shifts": [], "Base pace": []
-    }
-    for j in people:
-        assigned_legs = [i for i in segments if x[i, j].X > 0.5]
-        assigned_driving = [i for i in segments if d[i, j].X > 0.5]
-        summary["Runner"].append(skills.loc[j, "Runner"])
-        summary["Legs"].append(len(assigned_legs))
-        summary["Distance"].append(sum(route.loc[i, "Distance"] / (1 + route.loc[i, "Bike"]) for i in assigned_legs))
-        summary["D+"].append(int(sum(route.loc[i, "D+"] / (1 + route.loc[i, "Bike"]) for i in assigned_legs)))
-        summary["D-"].append(int(sum(route.loc[i, "D-"] / (1 + route.loc[i, "Bike"]) for i in assigned_legs)))
-        summary["Adj. Distance"].append(summary["Distance"][-1] + summary["D+"][-1] / 100)
-        summary["Driving"].append(sum(route.loc[i, "Distance"] for i in assigned_driving))
-        summary["Driving shifts"].append(int(sum(z[i, j].X for i in range(1, n_segments) if z[i, j].X > 0.5)))
-        summary["Base pace"].append(pace_to_str(skills.loc[j, "pace_HM"] * (1+skills.loc[j, "endurance"] * (summary["Adj. Distance"][-1] - 21))))
-
-
-    summary_df = pd.DataFrame(summary)
-    summary_df.set_index('Runner', inplace=True)
-
-    if save:
-        summary_df.to_csv('results/summary.csv')
 
     return assignment_df, summary_df
 

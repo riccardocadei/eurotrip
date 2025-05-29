@@ -39,3 +39,29 @@ def pace_to_str(p):
     m = p // 60
     s = p % 60
     return f'{int(m)}:{int(s):02d}'
+
+def str_to_pace(s):
+    if isinstance(s, str):
+        m, s = map(int, s.split(':'))
+        return m * 60 + s
+    return s
+
+def format_seconds(seconds):
+    seconds = abs(int(seconds))
+    days, remainder = divmod(seconds, 86400)
+    if days == 0:
+        day = "Sat"
+    elif days == 1:
+        day = "Sun"
+    else:
+        raise ValueError("Days should be 0 or 1. Only Saturday and Sunday are supported.")
+    hours, remainder = divmod(remainder, 3600)
+    if hours >= 12:
+        daytime = "PM"
+    else:
+        daytime = "AM"
+    hours = hours % 12
+    if hours == 0 and daytime == "PM":
+        hours = 12
+    minutes, secs = divmod(remainder, 60)
+    return f"{day} {hours:02}:{minutes:02}{daytime}"
