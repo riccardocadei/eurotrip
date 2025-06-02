@@ -96,6 +96,12 @@ def optimal_schedule(route, skills,
         m.addConstr(dist_expr <= skills.loc[j, "max_run"])
         m.addConstr(dplus_expr <= skills.loc[j, "max_D+"])
 
+    # Run2: No solo running if requested
+    for j in people:
+        for i in segments:
+            if skills.loc[j, "solo_running"] == 0:
+                m.addConstr(x[i, j] <= route.loc[i, "Bike"])
+
     # Recovery1: Recovery among legs
     for j in people:
         for i in range(n_segments - 2):

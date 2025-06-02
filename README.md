@@ -23,6 +23,7 @@ where:
     - At least one person has to drive at all time (not overlapping with runner/biker).
 2. Running Constraints
     - Total running limits per runner (min and max total distance and max D+).
+    - No solo running if requested (doubting personal orienteering skills).
 3. Recovery Constraints
     - At least 2 legs of recovery between two legs of running.
     - At least a night sleeping slot per runner with personalized length.
