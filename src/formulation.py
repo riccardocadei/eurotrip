@@ -11,7 +11,8 @@ def optimal_schedule(route, skills,
                      min_start_rest=20,
                      max_start_rest=33,
                      max_long_rest=7,
-                     quadratic=False):
+                     quadratic=True,
+                     start_time=5):
     
     segments = list(route.index)
     people = list(skills.index)
@@ -167,10 +168,10 @@ def optimal_schedule(route, skills,
     expected_time = int(expected_time // 3600), int((expected_time % 3600) // 60), int(expected_time % 60)
     print(f"Expected Time: {expected_time[0]}h{expected_time[1]:02d}m{expected_time[2]:02d}s")
 
-    assignment, summary = extract_results(route, skills, x, d, r, z, min_start_rest, max_start_rest, save)
+    assignment, summary = extract_results(route, skills, x, d, r, z, min_start_rest, max_start_rest, save, start_time=start_time)
     return assignment, summary
 
-def extract_results(route, skills, x, d, r, z, min_start_rest, max_start_rest, save=True):
+def extract_results(route, skills, x, d, r, z, min_start_rest, max_start_rest, save=True, start_time=5):
     segments = list(route.index)
     people = list(skills.index)
     n_segments = len(segments)
@@ -215,7 +216,7 @@ def extract_results(route, skills, x, d, r, z, min_start_rest, max_start_rest, s
                 rest_start[j] = s
                 break
     
-    t = 6*60*60 # 6 AM start time
+    t = start_time*60*60 # 5 AM start time
     for i in segments:
         assigned_runners = [skills.loc[j, "Runner"] for j in people if x[i, j].X > 0.5]
         assigned_driver = [skills.loc[j, "Runner"] for j in people if d[i, j].X > 0.5][0]

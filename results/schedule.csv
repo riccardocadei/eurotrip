@@ -1,39 +1,39 @@
 Segment,Place,From,To,Distance,D+,D-,Runner A,Speed A,Runner B,Speed B,Driver,Sleep,D+/km,D-/km,Time
-1,Innsbruck -> Vill,0.0,7.7,7.7,260,10,Florian,3:52,,,Alex,[],34,1,Sat 06:29AM
-2,Vill -> Ruggenschrein,7.7,12.4,4.7,230,0,Benjamin,4:12,,,Alex,[],49,0,Sat 06:49AM
-3,Ruggenschrein -> Gedeir,12.4,20.0,7.6,160,140,Riccardo,4:06,Anton,4:02,Alex,[],21,18,Sat 07:20AM
-4,Gedeir -> Steinach am Brenner,20.0,29.0,9.0,90,160,Florian,3:43,Paul,3:52,Alex,[],10,18,Sat 07:54AM
-5,Steinach am Brenner -> Stafflach,29.0,33.0,4.0,100,40,Benjamin,4:04,,,Alex,[],25,10,Sat 08:10AM
-7,Brenner-> Gossensaß,42.0,51.0,9.0,0,330,Monika,4:41,Riccardo,3:53,Alex,[],0,37,Sat 08:49AM
-8,Gossensaß -> Via Isarco,51.0,62.0,11.0,0,190,Florian,3:40,Esther,4:42,Alex,[],0,17,Sat 09:35AM
-9,Via Isarco -> Sachsenklemme,62.0,71.0,9.0,140,190,Anton,4:00,Benjamin,4:00,Alex,[],16,21,Sat 10:11AM
-10,Sachsenklemme -> Aicha,71.0,82.0,11.0,70,200,Paul,3:50,Riccardo,3:58,Alex,[],6,18,Sat 10:54AM
-11,Aicha -> Vintl Bahnhof,82.0,93.0,11.0,170,130,Florian,3:45,Esther,4:50,Alex,[],15,12,Sat 11:41AM
-12,Vintl Bahnhof -> Casteldarne - Ehrenburg,93.0,104.0,11.0,180,130,Anton,4:01,Benjamin,4:01,Alex,[],16,12,Sat 12:25PM
-13,Casteldarne - Ehrenburg -> Brunico Bruneck,104.0,114.0,10.0,150,100,Monika,4:50,Alex,4:04,Florian,[],15,10,Sat 01:10PM
-14,Brunico Bruneck -> Mitterolang,114.0,123.0,9.0,230,0,Paul,4:02,Riccardo,4:11,Florian,[],26,0,Sat 01:47PM
-15,Mitterolang -> Niederdorf,123.0,136.0,13.0,180,80,Anton,4:01,Benjamin,4:02,Florian,[],14,6,Sat 02:39PM
-16,Niederdorf -> San Candido Innichen,136.0,147.0,11.0,80,50,Esther,4:46,Alex,4:01,Florian,[],7,5,Sat 03:27PM
-17,San Candido Innichen -> Sillan,147.0,159.0,12.0,10,110,Paul,3:48,Riccardo,3:57,Florian,[],1,9,Sat 04:14PM
-18,Sillan -> Magarethenbrücke,159.0,169.0,10.0,20,170,Monika,4:43,Anton,3:55,Florian,[],2,17,Sat 04:57PM
-19,Magarethenbrücke -> near Lienz ,169.0,182.0,13.0,50,210,Alex,3:58,Benjamin,3:57,Florian,[],4,16,Sat 05:48PM
-20,near Lienz  -> after Lienz ,182.0,192.0,10.0,20,130,Paul,3:48,Riccardo,3:57,Florian,[],2,13,Sat 06:27PM
-21,after Lienz  -> Nörsach ,192.0,203.0,11.0,10,40,Esther,4:43,Monika,4:43,Florian,[],1,4,Sat 07:19PM
-22,Nörsach  -> Oberdrauberg ,203.0,209.0,6.0,70,60,Anton,3:59,,,Alex,[],12,10,Sat 07:43PM
-23,Oberdrauberg  -> Kötschach ,209.0,220.0,11.0,350,20,Florian,3:51,Benjamin,4:07,Alex,['Anton'],32,2,Sat 08:27PM
-24,Kötschach  -> below Grafendorf,220.0,232.0,12.0,0,70,Esther,4:42,Paul,3:48,Alex,"['Anton', 'Benjamin']",0,6,Sat 09:18PM
-25,below Grafendorf -> below Waidegg ,232.0,244.0,12.0,0,35,Alex,3:57,Riccardo,3:57,Florian,"['Anton', 'Benjamin']",0,3,Sat 10:05PM
-26,below Waidegg -> Eggeralm Straße Bridge ,244.0,253.0,9.0,10,40,Monika,4:43,Anton,3:56,Florian,['Benjamin'],1,4,Sat 10:44PM
-27,Eggeralm Straße Bridge  -> Vorderberg,253.0,267.0,14.0,20,30,Esther,4:43,Paul,3:49,Florian,"['Monika', 'Benjamin']",1,2,Sat 11:44PM
-28,Vorderberg  -> Maglern,267.0,281.0,14.0,180,100,Alex,4:03,Riccardo,4:03,Florian,"['Esther', 'Monika', 'Benjamin']",13,7,Sun 00:41AM
-29,Maglern -> Tarvisio Train station,281.0,290.0,9.0,210,110,Anton,4:04,Benjamin,4:03,Florian,"['Esther', 'Monika']",23,12,Sun 01:17AM
-30,Tarvisio Train station -> Podkoren,290.0,302.0,12.0,100,0,Florian,3:44,Paul,3:53,Alex,"['Esther', 'Monika']",8,0,Sun 02:03AM
-31,Podkoren -> after Gozd Martuljek,302.0,312.0,10.0,0,85,Monika,4:42,Riccardo,3:57,Alex,['Esther'],0,8,Sun 02:46AM
-32,after Gozd Martuljek -> Mojstrana ,312.0,320.0,8.0,0,80,Alex,3:57,Anton,3:55,Florian,['Esther'],0,10,Sun 03:17AM
-33,Mojstrana → Jesenice,320.0,329.0,9.0,70,140,Paul,3:51,Benjamin,3:58,Florian,"['Esther', 'Alex']",8,16,Sun 03:53AM
-34,Jesenice → towards Hrase,329.0,339.0,10.0,50,70,Esther,4:45,Riccardo,3:59,Florian,"['Paul', 'Alex']",5,7,Sun 04:36AM
-35,towards Hrase → Dobro Polje,339.0,349.0,10.0,10,80,Monika,4:43,Anton,3:55,Florian,"['Paul', 'Alex']",1,8,Sun 05:19AM
-36,Dobro Polje → Zeje,349.0,359.0,10.0,130,170,Florian,3:44,Alex,4:03,Benjamin,['Paul'],13,17,Sun 05:58AM
-37,crossing Kranj,359.0,371.0,12.0,40,90,Paul,3:49,Riccardo,3:58,Benjamin,[],3,8,Sun 06:45AM
-38,Prebacevo → before Medno,371.0,382.0,11.0,60,90,Monika,4:45,Anton,3:57,Benjamin,[],5,8,Sun 07:33AM
-39,Prebacevo → Lubjiana,382.0,392.0,10.0,50,60,Florian,3:42,Alex,4:00,Benjamin,[],5,6,Sun 08:11AM
+1,Innsbruck -> Vill,0.0,7.7,7.7,260,10,Florian,3:52,,,Alex,[],34,1,Sat 05:29AM
+2,Vill -> Ruggenschrein,7.7,12.4,4.7,230,0,Benjamin,4:12,,,Alex,[],49,0,Sat 05:49AM
+3,Ruggenschrein -> Gedeir,12.4,20.0,7.6,160,140,Riccardo,4:06,Anton,4:02,Alex,[],21,18,Sat 06:20AM
+4,Gedeir -> Steinach am Brenner,20.0,29.0,9.0,90,160,Florian,3:43,Paul,3:52,Alex,[],10,18,Sat 06:54AM
+5,Steinach am Brenner -> Stafflach,29.0,33.0,4.0,100,40,Benjamin,4:04,,,Alex,[],25,10,Sat 07:10AM
+7,Brenner-> Gossensaß,42.0,51.0,9.0,0,330,Monika,4:41,Riccardo,3:53,Alex,[],0,37,Sat 07:49AM
+8,Gossensaß -> Via Isarco,51.0,62.0,11.0,0,190,Florian,3:40,Esther,4:42,Alex,[],0,17,Sat 08:35AM
+9,Via Isarco -> Sachsenklemme,62.0,71.0,9.0,140,190,Anton,4:00,Benjamin,4:00,Alex,[],16,21,Sat 09:11AM
+10,Sachsenklemme -> Aicha,71.0,82.0,11.0,70,200,Paul,3:50,Riccardo,3:58,Alex,[],6,18,Sat 09:54AM
+11,Aicha -> Vintl Bahnhof,82.0,93.0,11.0,170,130,Florian,3:45,Esther,4:50,Alex,[],15,12,Sat 10:41AM
+12,Vintl Bahnhof -> Casteldarne - Ehrenburg,93.0,104.0,11.0,180,130,Anton,4:01,Benjamin,4:01,Alex,[],16,12,Sat 11:25AM
+13,Casteldarne - Ehrenburg -> Brunico Bruneck,104.0,114.0,10.0,150,100,Monika,4:50,Alex,4:04,Florian,[],15,10,Sat 12:10PM
+14,Brunico Bruneck -> Mitterolang,114.0,123.0,9.0,230,0,Paul,4:02,Riccardo,4:11,Florian,[],26,0,Sat 12:47PM
+15,Mitterolang -> Niederdorf,123.0,136.0,13.0,180,80,Anton,4:01,Benjamin,4:02,Florian,[],14,6,Sat 01:39PM
+16,Niederdorf -> San Candido Innichen,136.0,147.0,11.0,80,50,Esther,4:46,Alex,4:01,Florian,[],7,5,Sat 02:27PM
+17,San Candido Innichen -> Sillan,147.0,159.0,12.0,10,110,Paul,3:48,Riccardo,3:57,Florian,[],1,9,Sat 03:14PM
+18,Sillan -> Magarethenbrücke,159.0,169.0,10.0,20,170,Monika,4:43,Anton,3:55,Florian,[],2,17,Sat 03:57PM
+19,Magarethenbrücke -> near Lienz ,169.0,182.0,13.0,50,210,Alex,3:58,Benjamin,3:57,Florian,[],4,16,Sat 04:48PM
+20,near Lienz  -> after Lienz ,182.0,192.0,10.0,20,130,Paul,3:48,Riccardo,3:57,Florian,[],2,13,Sat 05:27PM
+21,after Lienz  -> Nörsach ,192.0,203.0,11.0,10,40,Esther,4:43,Monika,4:43,Florian,[],1,4,Sat 06:19PM
+22,Nörsach  -> Oberdrauberg ,203.0,209.0,6.0,70,60,Anton,3:59,,,Alex,[],12,10,Sat 06:43PM
+23,Oberdrauberg  -> Kötschach ,209.0,220.0,11.0,350,20,Florian,3:51,Benjamin,4:07,Alex,['Anton'],32,2,Sat 07:27PM
+24,Kötschach  -> below Grafendorf,220.0,232.0,12.0,0,70,Esther,4:42,Paul,3:48,Alex,"['Anton', 'Benjamin']",0,6,Sat 08:18PM
+25,below Grafendorf -> below Waidegg ,232.0,244.0,12.0,0,35,Alex,3:57,Riccardo,3:57,Florian,"['Anton', 'Benjamin']",0,3,Sat 09:05PM
+26,below Waidegg -> Eggeralm Straße Bridge ,244.0,253.0,9.0,10,40,Monika,4:43,Anton,3:56,Florian,['Benjamin'],1,4,Sat 09:44PM
+27,Eggeralm Straße Bridge  -> Vorderberg,253.0,267.0,14.0,20,30,Esther,4:43,Paul,3:49,Florian,"['Monika', 'Benjamin']",1,2,Sat 10:44PM
+28,Vorderberg  -> Maglern,267.0,281.0,14.0,180,100,Alex,4:03,Riccardo,4:03,Florian,"['Esther', 'Monika', 'Benjamin']",13,7,Sat 11:41PM
+29,Maglern -> Tarvisio Train station,281.0,290.0,9.0,210,110,Anton,4:04,Benjamin,4:03,Florian,"['Esther', 'Monika']",23,12,Sun 00:17AM
+30,Tarvisio Train station -> Podkoren,290.0,302.0,12.0,100,0,Florian,3:44,Paul,3:53,Alex,"['Esther', 'Monika']",8,0,Sun 01:03AM
+31,Podkoren -> after Gozd Martuljek,302.0,312.0,10.0,0,85,Monika,4:42,Riccardo,3:57,Alex,['Esther'],0,8,Sun 01:46AM
+32,after Gozd Martuljek -> Mojstrana ,312.0,320.0,8.0,0,80,Alex,3:57,Anton,3:55,Florian,['Esther'],0,10,Sun 02:17AM
+33,Mojstrana → Jesenice,320.0,329.0,9.0,70,140,Paul,3:51,Benjamin,3:58,Florian,"['Esther', 'Alex']",8,16,Sun 02:53AM
+34,Jesenice → towards Hrase,329.0,339.0,10.0,50,70,Esther,4:45,Riccardo,3:59,Florian,"['Paul', 'Alex']",5,7,Sun 03:36AM
+35,towards Hrase → Dobro Polje,339.0,349.0,10.0,10,80,Monika,4:43,Anton,3:55,Florian,"['Paul', 'Alex']",1,8,Sun 04:19AM
+36,Dobro Polje → Zeje,349.0,359.0,10.0,130,170,Florian,3:44,Alex,4:03,Benjamin,['Paul'],13,17,Sun 04:58AM
+37,crossing Kranj,359.0,371.0,12.0,40,90,Paul,3:49,Riccardo,3:58,Benjamin,[],3,8,Sun 05:45AM
+38,Prebacevo → before Medno,371.0,382.0,11.0,60,90,Monika,4:45,Anton,3:57,Benjamin,[],5,8,Sun 06:33AM
+39,Prebacevo → Lubjiana,382.0,392.0,10.0,50,60,Florian,3:42,Alex,4:00,Benjamin,[],5,6,Sun 07:11AM
